@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  root 'users#index'
+  post 'users' => 'users#create'
+  post 'users/login'
+  get 'users/:id/edit' => 'users#edit'
+  patch 'users/:id' => 'users#update'
+
+  get 'events' => 'events#index'
+  get 'events/:id' => 'events#show'
+  get 'events/new'
+  post 'events' => 'events#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
